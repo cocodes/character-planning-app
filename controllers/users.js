@@ -7,8 +7,8 @@ module.exports = {
 };
 
 function index(req, res) {
-  Student.find({}, function (err, students) {
-    res.render("students/index", { students });
+  User.find({}, function (err, users) {
+    res.render("users/index", { users });
   });
 }
 

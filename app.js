@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const session = require("express-session");
+const passport = require("passport");
 
 // We'll need to load the env vars
 require("dotenv").config();
@@ -24,10 +26,22 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
 // TODO Add session middleware here
+app.use(
+  session({
+    secret: "AOCRocks!",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// TODO Add passport middleware here
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
 // TODO Add passport middleware here
 

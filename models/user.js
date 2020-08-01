@@ -1,12 +1,44 @@
 const mongoose = require("mongoose");
 
-/*
-The factSchema is used to embedded docs in as student doc.
-There is no model and no 'facts' collection
-*/
 const characterSchema = new mongoose.Schema(
   {
-    text: String,
+    name: {
+      type: String,
+      required: true,
+    },
+    race: {
+      type: String,
+      enum: [
+        "Kaelar",
+        "Dünir",
+        "Ren'Kai",
+        "Empyrean",
+        "Vaelune",
+        "Niküa",
+        "Vek",
+        "Py'Rai",
+        "Tulnar",
+      ],
+      required: true,
+    },
+    archetype: {
+      type: String,
+      enum: [
+        "Bard",
+        "Cleric",
+        "Fighter",
+        "Mage",
+        "Ranger",
+        "Rogue",
+        "Summoner",
+        "Tank",
+      ],
+      required: true,
+    },
+    gender: {
+      type: String,
+      enum: ["Male", "Female"],
+    },
   },
   {
     timestamps: true,
@@ -17,6 +49,7 @@ const userSchema = new mongoose.Schema(
   {
     name: String,
     email: String,
+    googleId: String,
     avatar: String,
     characters: [characterSchema],
   },
