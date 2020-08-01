@@ -18,6 +18,7 @@ const app = express();
 
 // connect to the MongoDB with mongoose
 require("./config/database");
+require("./config/passport");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
