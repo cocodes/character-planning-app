@@ -1,13 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Users</title>
-  </head>
-  <body>
-    <% users.array.forEach(user => { %>
-    <span><%= user.name %></span>
-    <% }); %>
-  </body>
-</html>
+<%- include('../partials/header') %>
+
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper purple">
+      <a href="" class="brand-logo left">MMO Character Planner App</a>
+      <!-- Place Login UI Here -->
+      <ul class="right">
+        <li>
+          <% if (user) { %>
+          <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+          <% } else { %>
+          <a href="/auth/google">
+            <i class="material-icons left">vpn_key</i>Login with Google</a>
+          <% } %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <div class="row">
+    <div id="students" class="col s12">
+      <% users.forEach(function(user) { %>
+      <div class="card blue-grey">
+        <div class="card-content white-text">
+          <div>
+            <span class="card-title">
+              <i class="small material-icons">perm_identity</i>
+              <span class="student-name"><%= user.name %></span>
+            </span>
+          </div>
+          <ul class="collection">
+            <% user.characters.forEach(function(character) { %>
+            <li class="collection-item blue-grey-text text-darken-2">
+              <%= character.name %>
+            </li>
+            <% }) %>
+          </ul>
+          <!-- Add Dynamic UI form below this line -->
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

@@ -12,6 +12,7 @@ require("dotenv").config();
 // require our routes
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const characterRouter = require("./routes/characters")
 
 // create the Express app
 const app = express();
@@ -44,10 +45,9 @@ app.use(passport.session());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-// TODO Add passport middleware here
-
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/", usersRouter);
+app.use("/characters", characterRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
