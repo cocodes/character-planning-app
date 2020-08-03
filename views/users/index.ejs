@@ -1,23 +1,5 @@
 <%- include('../partials/header') %>
 
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper purple">
-      <a href="" class="brand-logo left">MMO Character Planner App</a>
-      <!-- Place Login UI Here -->
-      <ul class="right">
-        <li>
-          <% if (user) { %>
-          <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-          <% } else { %>
-          <a href="/auth/google">
-            <i class="material-icons left">vpn_key</i>Login with Google</a>
-          <% } %>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
 <div class="container">
   <div class="row">
     <div id="students" class="col s12">

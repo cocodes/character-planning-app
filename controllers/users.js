@@ -14,10 +14,10 @@ function index(req, res) {
 }
 
 function addCharacter(req, res) {
-  req.user.facts.push(req.body);
+  req.user.characters.push(req.body);
   req.user.save(function (err) {
-    res.redirect("/users");
+    res.redirect("/");
   });
 }
 
-function delCharacter(req, res) {}
+function delCharacter(req, res) { }

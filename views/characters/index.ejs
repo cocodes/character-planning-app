@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<% if (user) { %>
 <section class="flights hero">
   <div class="container">
     <div class="text-left">
@@ -20,5 +21,10 @@
     </div>
   </div>
 </section>
+<% } else { %>
+<section>
+  <h2>You need to login</h2>
+</section>
+<% } %>
 
 <%- include('../partials/footer') %>
