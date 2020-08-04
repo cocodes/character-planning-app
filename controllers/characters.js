@@ -31,7 +31,7 @@ function newCharacter(req, res) {
 }
 
 function deleteCharacter(req, res) {
-  req.user.characters.pop(req.body);
+  req.user.characters.splice(req.body, 1);
   req.user.save(function (err) {
     res.redirect("/characters")
   })
