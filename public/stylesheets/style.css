@@ -1,34 +1,99 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
-  background: rgba(8,3,37,.9);
   color: white;
 }
 
-nav {
-  padding: 20px 10px;
-  background: transparent;
+/* Buttons  */
+.btn {
+  background-color: #1dafed;
+  padding: 1rem 2rem 1rem 1.7rem;
 }
 
-nav a {
-  color: #fff;
-  font-size: 18px;
-  background: rgba(255,255,255,0.2);
+.btn:hover {
+  background-color: #ffffff;
+  color: #1dafed;
+  cursor: pointer;
+}
+
+.btn:hover a {
+  color: #1dafed;
+}
+
+.btn a {
   text-decoration: none;
-  padding: 10px;
-  display: block;
+  color: #ffffff;
 }
 
-.flex-between{
+/* NAV */
+
+.hero {
+  background-image: url("../images/asheshero.jpg");
+  max-height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero::before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 61%;
+}
+
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  height: 5rem;
+  padding-top: 0.8rem;
+  margin: 0 3.7%;
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 830px) {
+  nav ul {
+    display: none;
+  }
+}
+
+nav li {
+  padding-right: 23px;
+  color: #ffffff;
+}
+
+nav li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: #1dafed;
+}
+
+nav li:first-child {
+  margin-right: 24px;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  padding: 0 5%;
 }
 
 select {

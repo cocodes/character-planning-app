@@ -9,18 +9,18 @@
 </head>
 
 <body>
-  <section>
-    <nav>
-      <div class="flex-between">
-        <a href="/">MMO Character Planner App</a>
-        <ul class="nav-right">
-          <% if (user) { %>
-          <li><a href="/characters">Characters</a></li>
-          <li><a href="/logout">Log Out</a></li>
-          <% } else { %>
-          <li><a href="/auth/google">Login with Google</a></li>
-          <% } %>
-        </ul>
-      </div>
+  <header>
+    <nav class="container">
+      <ul>
+        <li class="btn">
+          <a href="/">MMO Character Planner App</a>
+        </li>
+        <% if (user) { %>
+        <li><a href="/characters">Characters</a></li>
+        <li><a href="/logout">Log Out</a></li>
+        <% } else { %>
+        <li><a href="/auth/google">Login with Google</a></li>
+        <% } %>
+      </ul>
     </nav>
-  </section>
+  </header>

@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<section class="hero"></section>
 <% if (user) { %>
 <section class="content">
   <div class="container">
@@ -12,7 +12,6 @@
       <li><%= character.race %></li>
       <li><%= character.archetype %></li>
       <li><%= character.gender %></li>
-      <li><a href="/characters/<%= idx %>">DETAILS</a></li>
       <form class="delete-form" action="/characters/<%= idx %>?_method=DELETE" method="POST">
         <button type="submit">🗑</button>
       </form>
