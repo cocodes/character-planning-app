@@ -2,35 +2,25 @@
 <html>
 
 <head>
-  <title>MMO Character Planning App</title>
+  <title><%= title %></title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet" />
-  <!-- Materialize Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
-  <div class="navbar-fixed">
+  <section>
     <nav>
-      <div class="nav-wrapper purple">
-        <a href="" class="brand-logo left">MMO Character Planner App</a>
-        <!-- Place Login UI Here -->
-        <ul class="right">
-          <li>
-            <% if (user) { %>
-            <a href="/characters">Characters</a>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-            <% } else { %>
-            <a href="/auth/google">
-              <i class="material-icons left">vpn_key</i>Login with Google</a>
-            <% } %>
-          </li>
+      <div class="flex-between">
+        <a href="/">MMO Character Planner App</a>
+        <ul class="nav-right">
+          <% if (user) { %>
+          <li><a href="/characters">Characters</a></li>
+          <li><a href="/logout">Log Out</a></li>
+          <% } else { %>
+          <li><a href="/auth/google">Login with Google</a></li>
+          <% } %>
         </ul>
       </div>
     </nav>
-  </div>
+  </section>

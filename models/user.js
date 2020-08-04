@@ -1,5 +1,26 @@
 const mongoose = require("mongoose");
 
+const infoSchema = new mongoose.Schema(
+  {
+    secondaryArchetype: {
+      type: String,
+      enum: [
+        "Bard",
+        "Cleric",
+        "Fighter",
+        "Mage",
+        "Ranger",
+        "Rogue",
+        "Summoner",
+        "Tank",
+      ],
+    },
+    guild: String,
+    familyName: String,
+  },
+  { timestamps: true }
+);
+
 const characterSchema = new mongoose.Schema(
   {
     name: {
@@ -19,7 +40,6 @@ const characterSchema = new mongoose.Schema(
         "Py'Rai",
         "Tulnar",
       ],
-      required: true,
     },
     archetype: {
       type: String,
@@ -38,7 +58,9 @@ const characterSchema = new mongoose.Schema(
     gender: {
       type: String,
       enum: ["Male", "Female"],
+      required: true,
     },
+    info: [infoSchema]
   },
   {
     timestamps: true,

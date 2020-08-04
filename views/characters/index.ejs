@@ -1,21 +1,27 @@
 <%- include('../partials/header') %>
 
 <% if (user) { %>
-<section class="flights hero">
+<section class="content">
   <div class="container">
-    <div class="text-left">
-      <h1>All Characters</h1>
-    </div>
-    <table>
-      <thead>
-        <th>Name</th>
-        <th>Race</th>
-        <th>Archetype</th>
-        <th>Gender</th>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+    <% if (user.characters) { %>
+    <% user.characters.forEach(function(character) { %>
+    <ul>
+      <li>
+        <h3><%= character.name %></h3>
+      </li>
+      <li><%= character.race %></li>
+      <li><%= character.archetype %></li>
+      <li><%= character.gender %></li>
+      <li><a href="/characters/<%= character._id %>">DETAILS</a></li>
+      <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+        <button type="submit">🗑</button>
+      </form>
+    </ul>
+    </span>
+    <% }) %>
+    <% } else { %>
+    <h5>No Characters yet</h5>
+    <% } %>
     <div class="btn">
       <a href="/characters/new">Add a new Character</a>
     </div>

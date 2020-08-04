@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
+const methodOverride = require("method-override");
 
 // We'll need to load the env vars
 require("dotenv").config();
@@ -13,6 +14,7 @@ require("dotenv").config();
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const characterRouter = require("./routes/characters")
+// const infoRouter = require("./routes/infos")
 
 // create the Express app
 const app = express();
@@ -28,6 +30,7 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 
 // TODO Add session middleware here
 app.use(
@@ -54,6 +57,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/", usersRouter);
 app.use("/", characterRouter);
+// app.use("/", infoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
