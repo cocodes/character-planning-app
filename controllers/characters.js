@@ -1,4 +1,4 @@
-const Character = require("../models/user");
+const User = require("../models/user");
 
 module.exports = {
   index,
@@ -31,7 +31,7 @@ function newCharacter(req, res) {
 }
 
 function deleteCharacter(req, res) {
-  req.user.characters.splice(req.body, 1);
+  req.user.characters.splice(req.params.id, 1);
   req.user.save(function (err) {
     res.redirect("/characters")
   })
@@ -44,3 +44,20 @@ function edit(req, res) {
 function update(req, res) {
 
 }
+
+// function update(id, todo) {
+//   todos.splice(id, 1, todo);
+// }
+
+
+// function create(todo) {
+//   todos.push(todo);
+// }
+
+// function getAll() {
+//   return todos;
+// }
+
+// function getOne(id) {
+//   return todos[id];
+// }

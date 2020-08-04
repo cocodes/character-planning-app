@@ -4,7 +4,7 @@
 <section class="content">
   <div class="container">
     <% if (user.characters) { %>
-    <% user.characters.forEach(function(character) { %>
+    <% user.characters.forEach(function(character, idx) { %>
     <ul>
       <li>
         <h3><%= character.name %></h3>
@@ -12,8 +12,8 @@
       <li><%= character.race %></li>
       <li><%= character.archetype %></li>
       <li><%= character.gender %></li>
-      <li><a href="/characters/<%= character._id %>">DETAILS</a></li>
-      <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+      <li><a href="/characters/<%= idx %>">DETAILS</a></li>
+      <form class="delete-form" action="/characters/<%= idx %>?_method=DELETE" method="POST">
         <button type="submit">🗑</button>
       </form>
     </ul>
