@@ -4,6 +4,7 @@ const charactersCtrl = require("../controllers/characters");
 
 router.get("/characters", charactersCtrl.index)
 router.get("/characters/new", isLoggedIn, charactersCtrl.new);
+router.get("/characters/:id", isLoggedIn, charactersCtrl.show);
 router.post("/characters", isLoggedIn, charactersCtrl.addCharacter);
 router.delete("/characters/:id", isLoggedIn, charactersCtrl.deleteCharacter);
 

@@ -84,6 +84,20 @@ h3 {
   background-image: url("../images/Ashes_of_Creation_screenshot3.jpg");
 }
 
+.block:nth-child(4) {
+  background-image: url("../images/Ashes_of_Creation_concept_art_2.jpg");
+}
+
+.block:nth-child(5) {
+  background-image: url("../images/Ashes_of_Creation_screenshot12.jpg");
+}
+
+.block:nth-child(6) {
+  background-image: url("../images/ashes5.png");
+}
+
+
+
 .character-creation{
   background-image: url("../images/ashes5.png");
   background-position: center;

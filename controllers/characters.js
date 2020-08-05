@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const Characters = require("../models/user");
 
 module.exports = {
   index,
@@ -7,9 +7,11 @@ module.exports = {
   deleteCharacter,
   edit,
   update,
+  show,
 };
 
 function index(req, res) {
+  console.log(req.user)
   res.render("characters/index", {
     title: "Characters",
     user: req.user,
@@ -24,6 +26,7 @@ function addCharacter(req, res) {
 }
 
 function newCharacter(req, res) {
+  console.log(req.user)
   res.render("characters/new", {
     title: "Add Character",
     user: req.user,
@@ -37,8 +40,19 @@ function deleteCharacter(req, res) {
   })
 }
 
-function edit(req, res) {
+function show(req, res) {
+  res.render("characters/show", {
+    title: "Character",
+    user: req.user,
+    characters: req.user.characters,
+  });
+}
 
+function edit(req, res) {
+  res.render("characters/edit", {
+    user: req.user,
+    character: user.characters,
+  });
 }
 
 function update(req, res) {

@@ -16,6 +16,7 @@
         <form class="delete-form" action="/characters/<%= idx %>?_method=DELETE" method="POST">
           <button type="submit">🗑</button>
         </form>
+        <a href="/characters/<%= character._id %>">Detail</a>
       </ul>
       <% }) %>
     </div>
