@@ -1,25 +1,56 @@
 <%- include('../partials/header') %>
 
-<section class="hero"></section>
 
+<section class="hero"></section>
 <% if (user) { %>
 <section class="content">
   <div class="container character-creation">
     <% if (characters) { %>
-    <% characters.forEach(function(c) { %>
-    <p><%= c.name %></p>
-    <p><%= c.race %></p>
-    <p><%= c.gender %></p>
-    <a href="/users/<%= user._id %>/characters/<%= c._id %>">Detail</a>
-    <% }); %>
+    <div class="content-flex">
+      <% characters.forEach(function(character) { %>
+      <ul>
+        <li>
+          <h3><%= character.name %></h3>
+        </li>
+        <li><%= character.race %></li>
+        <li><%= character.archetype %></li>
+        <li><%= character.gender %></li>
+        <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+          <button type="submit">🗑</button>
+        </form>
+        <a href="/users/<%= user._id %>/characters/<%= character._id %>">Detail</a>
+      </ul>
+      <% }) %>
+    </div>
     <% } else { %>
     <h5>No Characters yet</h5>
     <% } %>
-    <a href="/users/<%= user._id %>/characters/new">Add a character</a>
+    <div class="btn btn-margin-bottom">
+      <a href="/users/<%= user._id %>/characters/new">Add a new Character</a>
+    </div>
   </div>
 </section>
 <% } else { %>
-<h3>You need to Login</h3>
+<section class="content">
+  <div class="container character-creation">
+    <% if (characters) { %>
+    <div class="content-flex">
+      <% characters.forEach(function(character) { %>
+      <ul>
+        <li>
+          <h3><%= character.name %></h3>
+        </li>
+        <li><%= character.race %></li>
+        <li><%= character.archetype %></li>
+        <li><%= character.gender %></li>
+      </ul>
+      <% }) %>
+    </div>
+    <% } else { %>
+    <h5>No Characters yet</h5>
+    <% } %>
+  </div>
+</section>
 <% } %>
 
 <%- include('../partials/footer') %>

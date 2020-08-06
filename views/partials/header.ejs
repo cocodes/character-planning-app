@@ -4,7 +4,8 @@
 <head>
   <title><%= title %></title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
@@ -12,14 +13,13 @@
   <div class="content-wrap">
     <header>
       <nav class="container">
+        <a class="btn logo" href="/">MMO Planning App</a>
         <ul>
-          <li class="btn">
-            <a href="/">MMO Character Planner App</a>
-          </li>
+          <li></li>
           <% if (user) { %>
-          <li><a href="/logout">Log Out</a></li>
           <li><a href="/users/<%= user._id %>">Profile</a></li>
           <li><a href="/users/<%= user._id %>/characters">Characters</a></li>
+          <li><a href="/logout">Log Out</a></li>
           <% } else { %>
           <li><a href="/auth/google">Login with Google</a></li>
           <% } %>

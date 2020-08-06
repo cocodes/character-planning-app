@@ -9,10 +9,14 @@
       <div>
         <ul>
           <li>
-            <h3><%= character.name %></h3>
+            <h3 class="c-name"><%= character.name %></h3>
           </li>
-          <li><%= character.race %></li>
-          <li><%= character.archetype %></li>
+          <li>
+            <p class="race"><%= character.race %></p>
+          </li>
+          <li>
+            <p class="class"><%= character.archetype %></p>
+          </li>
         </ul>
         </span>
       </div>
@@ -20,4 +24,9 @@
   </div>
   <% }) %>
 </section>
+
+<section class="info">
+
+</section>
+
 <%- include('../partials/footer') %>
