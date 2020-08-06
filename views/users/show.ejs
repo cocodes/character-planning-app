@@ -1,7 +1,5 @@
 <%- include('../partials/header') %>
 
-
-<section class="hero"></section>
 <% if (user) { %>
 <section class="content">
   <div class="container character-creation">
@@ -10,11 +8,17 @@
       <% characters.forEach(function(character) { %>
       <ul>
         <li>
-          <h3><%= character.name %></h3>
+          <h3 class="c-name"><%= character.name %></h3>
         </li>
-        <li><%= character.race %></li>
-        <li><%= character.archetype %></li>
-        <li><%= character.gender %></li>
+        <li>
+          <p><%= character.race %></p>
+        </li>
+        <li>
+          <p><%= character.gender %></p>
+        </li>
+        <li>
+          <p class="class"><%= character.archetype %></p>
+        </li>
         <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
           <button type="submit">🗑</button>
         </form>

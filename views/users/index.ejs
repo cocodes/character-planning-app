@@ -1,32 +1,7 @@
 <%- include('../partials/header') %>
 
-<section class="hero"></section>
-
 <section class="content">
-  <% characters.forEach(function(character) { %>
-  <div class="container block">
-    <div>
-      <div>
-        <ul>
-          <li>
-            <h3 class="c-name"><%= character.name %></h3>
-          </li>
-          <li>
-            <p class="race"><%= character.race %></p>
-          </li>
-          <li>
-            <p class="class"><%= character.archetype %></p>
-          </li>
-        </ul>
-        </span>
-      </div>
-    </div>
-  </div>
-  <% }) %>
-</section>
-
-<section class="info">
-
+  <%- include('../partials/characters') %>
 </section>
 
 <%- include('../partials/footer') %>

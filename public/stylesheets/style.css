@@ -32,7 +32,16 @@ h3 {
   font-size: 2rem;
 }
 
-.content-wrap {
+/* .content-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+} */
+
+.max-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -84,10 +93,12 @@ h3 {
 } */
 .class {
   font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 .c-name {
   color: var(--yellow);
+  margin-bottom: 1rem;
 }
 /* NAV */
 
@@ -155,6 +166,7 @@ h3 {
   background-size: cover;
   position: relative;
   overflow: hidden;
+  min-height: 1000px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -162,9 +174,16 @@ h3 {
   flex-direction: column;
 }
 
+.profile { 
+  background-image: url("../images/ashes5.png");
+}
+
 .content-flex {
   display: flex;
   margin-top: 10rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .character-creation::before {
