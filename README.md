@@ -7,7 +7,7 @@ An app that currently holds and stores basic informaton about a users set of cha
 Roadmap would include upgrading the basic information to store almost everything possible about the characters and the world they live in.
 
 A little background,
-Ashes of Creation is a highly anticpipated MMO that has very high ambitious features and ideas.
+Ashes of Creation is a highly anticpipated MMO that has high ambitions of features and ideas.
 Users create characters in the game and every action they do influences not only their character progression, but living world as well.
 
 There are apps and sites for other past games that work similiary to what I have envisioned.
