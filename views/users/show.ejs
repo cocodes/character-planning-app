@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<section class="hero"></section>
+
+<section class="content">
+  <div class="container character-creation">
+    <h2>heeey</h2>
+    <% if (characters) { %>
+    <% characters.forEach(function(c) { %>
+    <p><%= c.name %></p>
+    <p><%= c.race %></p>
+    <p><%= c.gender %></p>
+    <a href="/users/<%= user._id %>/characters/<%= c._id %>">Detail</a>
+    <% }); %>
+    <% } else { %>
+    <h5>No Characters yet</h5>
+    <% } %>
+    <a href="/users/<%= user._id %>/characters/new">Add a character</a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

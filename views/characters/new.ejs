@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+
 <section class="hero"></section>
 <section class="content">
   <div class="container character-creation">
@@ -6,7 +7,7 @@
     <h2>Create a new Character</h2>
     <section>
       <div class="container">
-        <form action="/characters" method="POST">
+        <form action="/users/<%= user._id %>/characters" method="POST">
           <label>name:</label>
           <input type="text" name="name" />
           <div>

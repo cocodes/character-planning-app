@@ -3,9 +3,9 @@
 <% if (user) { %>
 <section class="content">
   <div class="container character-creation">
-    <% if (user.characters) { %>
+    <% if (characters) { %>
     <div class="content-flex">
-      <% user.characters.forEach(function(character, idx) { %>
+      <% characters.forEach(function(character) { %>
       <ul>
         <li>
           <h3><%= character.name %></h3>
@@ -13,10 +13,10 @@
         <li><%= character.race %></li>
         <li><%= character.archetype %></li>
         <li><%= character.gender %></li>
-        <form class="delete-form" action="/characters/<%= idx %>?_method=DELETE" method="POST">
+        <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
           <button type="submit">🗑</button>
         </form>
-        <a href="/characters/<%= character._id %>">Detail</a>
+        <a href="/users/<%= user._id %>/characters/<%= character._id %>">Detail</a>
       </ul>
       <% }) %>
     </div>

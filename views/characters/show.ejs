@@ -1,31 +1,13 @@
 <%- include('../partials/header') %>
 
-<% if (user) { %>
-<h3>yes</h3>
-<% if (characters) { %>
-<div class="content-flex">
-  <% characters.forEach(function(character, idx) { %>
-  <ul>
-    <li>
-      <h3><%= character.name %></h3>
-    </li>
-    <li><%= character.race %></li>
-    <li><%= character.archetype %></li>
-    <li><%= character.gender %></li>
-    <form class="delete-form" action="/characters/<%= idx %>?_method=DELETE" method="POST">
-      <button type="submit">🗑</button>
-    </form>
-    <a href="/characters/<%= character._id %>">Detail</a>
-  </ul>
-  <% }) %>
+<section class="hero"></section>
+
+<div class="container character-creation">
+  <h2> test </h2>
+  <%= character.name %>
+  <%= character.race %>
+  <%= character.archetype %>
+  <%= character.gender %>
 </div>
-<% } else { %>
-<h5>No Characters yet</h5>
-<% } %>
-<% } else { %>
-<section>
-  <h2>You need to login</h2>
-</section>
-<% } %>
 
 <%- include('../partials/footer') %>

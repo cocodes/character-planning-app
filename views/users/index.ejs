@@ -4,22 +4,9 @@
 
 <% users.forEach(function(user) { %>
 <section class="content">
-  <% user.characters.forEach(function(character) { %>
-  <div class="container block">
-    <div>
-      <div>
-        <ul>
-          <li>
-            <h3><%= character.name %></h3>
-          </li>
-          <li><%= character.race %></li>
-          <li><%= character.archetype %></li>
-        </ul>
-        </span>
-      </div>
-    </div>
-  </div>
-  <% }) %>
+  <a href="/users/<%= user._id %>">
+    <h3><%= user.name %></h3>
+  </a>
 </section>
 <% }) %>
 
