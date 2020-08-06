@@ -13,8 +13,8 @@ require("dotenv").config();
 // require our routes
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const characterRouter = require("./routes/characters")
-// const infoRouter = require("./routes/infos")
+const characterRouter = require("./routes/characters");
+const infosRouter = require("./routes/infos");
 
 // create the Express app
 const app = express();
@@ -57,7 +57,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/", characterRouter);
-// app.use("/", infoRouter);
+app.use("/", infosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

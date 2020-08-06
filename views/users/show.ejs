@@ -2,9 +2,9 @@
 
 <section class="hero"></section>
 
+<% if (user) { %>
 <section class="content">
   <div class="container character-creation">
-    <h2>heeey</h2>
     <% if (characters) { %>
     <% characters.forEach(function(c) { %>
     <p><%= c.name %></p>
@@ -18,5 +18,8 @@
     <a href="/users/<%= user._id %>/characters/new">Add a character</a>
   </div>
 </section>
+<% } else { %>
+<h3>You need to Login</h3>
+<% } %>
 
 <%- include('../partials/footer') %>

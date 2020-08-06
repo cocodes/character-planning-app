@@ -9,7 +9,9 @@ module.exports = {
 
 function index(req, res) {
   User.find({}, function (err, users) {
-    res.render("users/index", { title: "Users", users, user: req.user });
+    Character.find({}, function (err, characters) {
+      res.render("users/index", { title: "Users", users, characters, user: req.user });
+    });
   });
 }
 
@@ -20,16 +22,3 @@ function show(req, res) {
     });
   });
 }
-
-// const User = require("../models/user");
-// const { render } = require("ejs");
-
-// module.exports = {
-//   index,
-// };
-
-// function index(req, res) {
-//   User.find({}, function (err, users) {
-//     res.render("users/index", { title: "Users", users, user: req.user });
-//   });
-// }

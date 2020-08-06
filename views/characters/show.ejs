@@ -3,11 +3,70 @@
 <section class="hero"></section>
 
 <div class="container character-creation">
-  <h2> test </h2>
   <%= character.name %>
   <%= character.race %>
   <%= character.archetype %>
   <%= character.gender %>
+  <% if (character.info.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Secondary Archetype</th>
+        <th>Guild</th>
+        <th>Family Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% character.info.forEach(function(i) { %>
+      <tr>
+        <td><%= i.secondaryArchetype %></td>
+        <td><%= i.guild %></td>
+        <td><%= i.familyName %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <section>
+    <h1>Edit Info</h1>
+    <form action="/info/?_method=PUT" method="POST">
+      <label>Secondary Archetype:</label>
+      <select name="secondaryArchetype">
+        <option value="Bard">Bard</option>
+        <option value="Cleric">Cleric</option>
+        <option value="Fighter">Fighter</option>
+        <option value="Mage">Mage</option>
+        <option value="Ranger">Ranger</option>
+        <option value="Rogue">Rogue</option>
+        <option value="Summoner">Summoner</option>
+        <option value="Tank">Tank</option>
+      </select>
+      <label>Guild:</label>
+      <input type="text" name="guild" />
+      <label>Family Name:</label>
+      <input type="text" name="familyName" />
+      <input type="submit" value="Edit Info" />
+    </form>
+  </section>
+  <% } else { %>
+  <form id="add-info-form" method="POST" action="/characters/<%= character._id %>/info">
+    <label>Secondary Archetype:</label>
+    <select name="secondaryArchetype">
+      <option value="Bard">Bard</option>
+      <option value="Cleric">Cleric</option>
+      <option value="Fighter">Fighter</option>
+      <option value="Mage">Mage</option>
+      <option value="Ranger">Ranger</option>
+      <option value="Rogue">Rogue</option>
+      <option value="Summoner">Summoner</option>
+      <option value="Tank">Tank</option>
+    </select>
+    <label>Guild:</label>
+    <input type="text" name="guild" />
+    <label>Family Name:</label>
+    <input type="text" name="familyName" />
+    <input type="submit" value="Add Info" />
+  </form>
+  <% } %>
 </div>
 
 <%- include('../partials/footer') %>

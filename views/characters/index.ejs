@@ -24,13 +24,30 @@
     <h5>No Characters yet</h5>
     <% } %>
     <div class="btn btn-margin-bottom">
-      <a href="/characters/new">Add a new Character</a>
+      <a href="/users/<%= user._id %>/characters/new">Add a new Character</a>
     </div>
   </div>
 </section>
 <% } else { %>
-<section>
-  <h2>You need to login</h2>
+<section class="content">
+  <div class="container character-creation">
+    <% if (characters) { %>
+    <div class="content-flex">
+      <% characters.forEach(function(character) { %>
+      <ul>
+        <li>
+          <h3><%= character.name %></h3>
+        </li>
+        <li><%= character.race %></li>
+        <li><%= character.archetype %></li>
+        <li><%= character.gender %></li>
+      </ul>
+      <% }) %>
+    </div>
+    <% } else { %>
+    <h5>No Characters yet</h5>
+    <% } %>
+  </div>
 </section>
 <% } %>
 

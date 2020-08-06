@@ -18,6 +18,8 @@
           </li>
           <% if (user) { %>
           <li><a href="/logout">Log Out</a></li>
+          <li><a href="/users/<%= user._id %>">Profile</a></li>
+          <li><a href="/users/<%= user._id %>/characters">Characters</a></li>
           <% } else { %>
           <li><a href="/auth/google">Login with Google</a></li>
           <% } %>
