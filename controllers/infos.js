@@ -8,8 +8,9 @@ module.exports = {
 function create(req, res) {
   Character.findById(req.params.id, function (err, character) {
     character.info.push(req.body);
+    const user = req.user.id;
     character.save(function (err) {
-      res.redirect(`/users/`);
+      res.redirect(`/users/${user}/characters/${character._id}`);
     });
   });
 }
@@ -33,10 +34,11 @@ function create(req, res) {
 
 function update(req, res) {
   Character.findOne({ "info._id": req.params.id }, function (err, character) {
+    const user = req.user.id;
     const info = character.info.id(req.params.id);
     info.overwrite(req.body);
     character.save(function (err) {
-      res.redirect(`/users/`);
+      res.redirect(`/users/${user}/characters/${character._id}`);
     });
   });
 }

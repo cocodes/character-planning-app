@@ -86,8 +86,9 @@ function addToUser(req, res) {
 
 function deleteCharacter(req, res) {
   User.findById(req.params.id, function (err, user) {
+    const userId = req.user.id;
     Character.findByIdAndDelete(req.params.id, function (err, character) {
-      res.redirect(`/users/`)
+      res.redirect(`/users/${userId}/characters`)
     });
   });
 }
