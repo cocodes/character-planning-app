@@ -1,58 +1,44 @@
 <%- include('../partials/header') %>
 <% if (user) { %>
-<section class="content">
-  <div class="container character-creation">
-    <% if (characters) { %>
-    <div class="content-flex">
-      <% characters.forEach(function(character) { %>
-      <ul>
-        <li>
-          <h3 class="c-name"><%= character.name %></h3>
-        </li>
-        <li>
-          <p><%= character.race %></p>
-        </li>
-        <li>
-          <p><%= character.gender %></p>
-        </li>
-        <li>
-          <p class="class"><%= character.archetype %></p>
-        </li>
-        <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
-          <button type="submit">🗑</button>
-        </form>
-        <a href="/users/<%= user._id %>/characters/<%= character._id %>">Detail</a>
-      </ul>
-      <% }) %>
-    </div>
-    <% } else { %>
-    <h5>No Characters yet</h5>
-    <% } %>
-    <div class="btn btn-margin-bottom">
+
+<section class="btn-container">
+  <div class="max-container">
+    <div class="btn">
       <a href="/users/<%= user._id %>/characters/new">Add a new Character</a>
     </div>
   </div>
 </section>
-<% } else { %>
-<section class="content">
-  <div class="container character-creation">
-    <% if (characters) { %>
-    <div class="content-flex">
-      <% characters.forEach(function(character) { %>
-      <ul>
-        <li>
-          <h3><%= character.name %></h3>
-        </li>
-        <li><%= character.race %></li>
-        <li><%= character.archetype %></li>
-        <li><%= character.gender %></li>
-      </ul>
-      <% }) %>
+
+<section class="content alternative">
+  <% characters.forEach(function(character) { %>
+  <a href="/users/<%= user._id %>/characters/<%= character._id %>" class="container block max-container">
+    <div>
+      <div>
+        <ul>
+          <li>
+            <h3 class="c-name"><%= character.name %></h3>
+          </li>
+          <li>
+            <p class="race"><%= character.race %></p>
+          </li>
+          <li>
+            <p class="class"><%= character.archetype %></p>
+          </li>
+        </ul>
+        </span>
+      </div>
     </div>
-    <% } else { %>
-    <h5>No Characters yet</h5>
-    <% } %>
-  </div>
+    <form class="delete-form" action="/characters/<%= character._id %>?_method=DELETE" method="POST">
+      <button type="submit">
+        <p class="delete">X</p>
+      </button>
+    </form>
+  </a>
+  <% }) %>
+</section>
+<% } else { %>
+<section class="content alternative">
+  <%- include('../partials/characters') %>
 </section>
 <% } %>
 

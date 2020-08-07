@@ -26,16 +26,14 @@ body {
 
 header {
   position: relative;
+  display: flex;
+  justify-content: center;
+  background: transparent;
 }
 
 h3 {
   font-size: 2rem;
 }
-
-/* .content-wrap {
-  max-width: 1400px;
-  margin: 0 auto;
-} */
 
 .max-container {
   display: flex;
@@ -79,6 +77,13 @@ h3 {
   color: #ffffff;
 }
 
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 20px 0;
+}
+
 /* .button{
   background: none;
   background-color: var(--primary);
@@ -100,6 +105,13 @@ h3 {
   color: var(--yellow);
   margin-bottom: 1rem;
 }
+
+.delete-form {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 /* NAV */
 
 .hero {
@@ -120,6 +132,7 @@ h3 {
   padding-top: 60%;
 }
 
+/* Cards  */
 .block {
   background-image: url("../images/Ashes-of-Creation.jpg");
   background-position: center;
@@ -156,6 +169,71 @@ h3 {
 }
 
 .block:nth-child(6) {
+  background-image: url("../images/ashes5.png");
+}
+
+.alternative {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.alternative .block {
+  background-image: url(../images/cleric.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  width: 20%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: calc(100% / 4);
+  flex-wrap: wrap;
+  height: 50rem;
+  transition: all .3s ease-in-out;
+}
+
+.alternative .block:hover {
+  transform: scale(1.1);
+  z-index: 999;
+}
+
+.alternative .c-name {
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.delete {
+  color: red;
+  font-weight: 900;
+  width: 2.5rem;
+  font-size: 1rem;
+}
+
+.alternative .block::before {
+  content: "";
+  display: block;
+  height: 0;
+}
+
+.alternative .block:nth-child(2) {
+  background-image: url("../images/tank.png");
+}
+
+.alternative .block:nth-child(3) {
+  background-image: url("../images/ranger.png");
+}
+
+.alternative .block:nth-child(4) {
+  background-image: url("../images/mage.png");
+}
+
+.alternative .block:nth-child(5) {
+  background-image: url("../images/cleric.png");
+}
+
+.alternative .block:nth-child(6) {
   background-image: url("../images/ashes5.png");
 }
 
@@ -201,6 +279,12 @@ nav {
   height: 5rem;
   padding-top: 0.8rem;
   z-index: 999;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: fixed;
 }
 
 nav ul {
@@ -248,14 +332,14 @@ section.content .container{
   align-items: center;
 }
 
-input,textarea{
+/* input,textarea{
   background: rgba(255,255,255,0.05);
   padding: 10px 16px;
   border-radius: 20px;
   border: 2px solid #9893D8;
   color: black;
   font-size: 1em;
-}
+} */
 
 footer{
   padding: 30px 20px;
