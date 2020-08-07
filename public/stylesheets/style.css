@@ -123,6 +123,7 @@ h3 {
   overflow: hidden;
   width: 100%;
   margin-bottom: -16px;
+  transition: all .1s ease-in;
 }
 
 .hero::before {
