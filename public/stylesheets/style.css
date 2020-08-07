@@ -190,12 +190,12 @@ h3 {
   justify-content: flex-start;
   width: calc(100% / 4);
   flex-wrap: wrap;
-  height: 50rem;
+  height: 72rem;
   transition: all .3s ease-in-out;
 }
 
 .alternative .block:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
   z-index: 999;
 }
 
@@ -209,6 +209,11 @@ h3 {
   font-weight: 900;
   width: 2.5rem;
   font-size: 1rem;
+}
+
+#add-info-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .alternative .block::before {

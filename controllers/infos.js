@@ -12,4 +12,3 @@ function create(req, res) {
     });
   });
 }
-

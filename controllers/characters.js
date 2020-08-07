@@ -7,6 +7,7 @@ module.exports = {
   addToUser,
   show,
   index,
+  edit,
   deleteCharacter,
 };
 
@@ -36,6 +37,16 @@ function show(req, res) {
   });
 }
 
+function edit(req, res) {
+  Character.findById(req.params.id, function (err, character) {
+    res.render("characters/edit", {
+      title: "Character Edit",
+      character,
+      user: req.user,
+    });
+  });
+}
+
 function create(req, res) {
   Character.create(req.body, function (err, character) {
     console.log(character);
@@ -54,7 +65,9 @@ function addToUser(req, res) {
 }
 
 function deleteCharacter(req, res) {
-  Character.findByIdAndDelete(req.params.id, function (err, character) {
-    res.redirect("/users/")
+  User.findById(req.params.id, function (err, user) {
+    Character.findByIdAndDelete(req.params.id, function (err, character) {
+      res.redirect(`/users/`)
+    });
   });
 }
