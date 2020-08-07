@@ -28,8 +28,8 @@ I wish to continue working on this project into a fully functioning app.
 
 # Screenshots
 
-![picture](../character-planning-app/public/images/Screen%20Shot%202020-08-06%20at%209.36.16%20PM.png)
-![picture](../character-planning-app/public/images/Screen%20Shot%202020-08-06%20at%205.27.33%20PM.png)
+![picture](https://i.imgur.com/UqHDPto.png)
+![picture](https://i.imgur.com/NcRlYPw.png)
 
 # Getting Started
 [Click here](https://character-planning-app.herokuapp.com/users) to open app in browser
