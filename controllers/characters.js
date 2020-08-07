@@ -7,8 +7,10 @@ module.exports = {
   addToUser,
   show,
   index,
-  edit,
+  update,
   deleteCharacter,
+  edit,
+  updateCharacter,
 };
 
 function index(req, res) {
@@ -40,9 +42,27 @@ function show(req, res) {
 function edit(req, res) {
   Character.findById(req.params.id, function (err, character) {
     res.render("characters/edit", {
-      title: "Character Edit",
+      title: "Character",
       character,
       user: req.user,
+    });
+  });
+}
+
+
+function update(req, res) {
+  Character.findByIdAndUpdate(req.body, function (err, character) {
+    console.log(character);
+    res.redirect(`/users/`);
+  });
+}
+
+function updateCharacter(req, res) {
+  User.findById(req.params.id, function (err, user) {
+    const character = new Character(req.body)
+    character.user = user
+    character.save(function (err) {
+      res.redirect(`/users/`);
     });
   });
 }
