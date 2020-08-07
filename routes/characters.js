@@ -10,7 +10,7 @@ router.get("/users/:id/characters/:id", charactersCtrl.show);
 router.delete("/characters/:id", isLoggedIn, charactersCtrl.deleteCharacter);
 router.put("/characters/:id", isLoggedIn, charactersCtrl.update);
 router.put("/characters/:id", isLoggedIn, charactersCtrl.updateCharacter);
-router.get("/users/:id/characters/:id", isLoggedIn, charactersCtrl.edit);
+// router.get("/users/:id/characters/:id", isLoggedIn, charactersCtrl.edit);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
