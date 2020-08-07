@@ -9,8 +9,8 @@ module.exports = {
   index,
   update,
   deleteCharacter,
-  edit,
   updateCharacter,
+  // edit,
 };
 
 function index(req, res) {
@@ -39,15 +39,15 @@ function show(req, res) {
   });
 }
 
-function edit(req, res) {
-  Character.findById(req.params.id, function (err, character) {
-    res.render("characters/edit", {
-      title: "Character",
-      character,
-      user: req.user,
-    });
-  });
-}
+// function edit(req, res) {
+//   Character.findById(req.params.id, function (err, character) {
+//     res.render("characters/edit", {
+//       title: "Character",
+//       character,
+//       user: req.user,
+//     });
+//   });
+// }
 
 
 function update(req, res) {
